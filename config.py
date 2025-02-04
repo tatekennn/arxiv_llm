@@ -1,3 +1,9 @@
+import os
+from dotenv import load_dotenv
+
+# .envファイルの読み込み
+load_dotenv()
+
 # 検索条件
 BASE_QUERY = "Decision Transformer"
 # 過去何日以内の論文を対象とするか
@@ -16,7 +22,8 @@ EXCLUDE_FILTER = ""
 ARXIV_MAX_RESULTS = 5
 
 # OpenAI API設定（適切なAPIキーの設定が必要です）
-OPENAI_MODEL = "gpt-4"
+OPENAI_MODEL = "gpt-4o-mini"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # ログ設定
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
